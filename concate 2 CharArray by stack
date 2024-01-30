@@ -1,0 +1,57 @@
+#include <iostream>
+#include <stack>
+#include <string>
+
+using namespace std;
+
+
+int main()
+{
+  int m=4;
+  char FirstName[m];
+
+  cout <<" First name = ";
+  for(int i=0;i<m;i++)
+  {
+
+      cin>>FirstName[i];
+
+  }
+  int n=4;
+  char LastName[n];
+
+   cout <<" Last name = ";
+  for(int i=0;i<n;i++)
+  {
+
+      cin>>LastName[i];
+
+  }
+
+   stack<char>s;
+
+    for(int i=n-1;i>=0;--i)
+   {
+       s.push(LastName[i]);
+   }
+
+
+  s.push(' ') ;
+
+
+    for(int i=m-1;i>=0;--i)
+   {
+       s.push(FirstName[i]);
+   }
+
+
+cout<<"Full name = " ;
+   while(!s.empty())
+   {
+       cout<<s.top();
+       s.pop();
+
+   }
+
+return 0;
+}
